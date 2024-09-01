@@ -48,7 +48,7 @@ const Body = () => {
         return <div>No internet connection. Please check your network settings.</div>
 
     return (
-        <div className="w-full flex justify-center px-4">
+        <div className="w-full flex justify-center px-4 font-poppins">
 
             <div className="max-w-[1200px] flex flex-col justify-center">
                 {fList == 0 ? <Shimmers /> : <div>
