@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "start": "parcel index.html",
-    "build": "run build",
+    "build": "react-script build",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "Divyesh Dhole",
