@@ -19,6 +19,7 @@ const Shimmer = () => {
                     </div>
                 ))}
             </div>
+
         </div >
 
     );

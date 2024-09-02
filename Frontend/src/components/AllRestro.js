@@ -1,12 +1,12 @@
 import { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import ResCard from './ResCard';
-const AllRestro = ({ search, filterResult, title, fList }) => {
+const AllRestro = ({ search, filterResult, title, fList, setfilterResult }) => {
 
 
     return <div className="flex flex-col mt-6">
         {title && <h3 className="text-2xl font-bold mb-4">{title}</h3>}
-        <div className="flex items-center">
+        <div className="flex items-center font-sans">
             <input type="text" className="p-2 border border-orange-400 rounded-l-lg" placeholder="Search for food" value={search} onChange={function (e) {
                 setsearch(e.target.value);
 
@@ -18,7 +18,6 @@ const AllRestro = ({ search, filterResult, title, fList }) => {
             }}>Search</button>
 
             <button className="m-2 shadow-sm text-xs border font-semibold text-gray-900 h-8 px-2 border-gray-300 bg-white hover:bg-gray-200 rounded-full" onClick={() => {
-                //fast delivery logic by tabnine
 
                 const filterList = fList.filter((res) => res.info.sla.deliveryTime < 30)
                 setfilterResult(filterList);
