@@ -35,6 +35,7 @@ const Body = () => {
                 setMind(data.data.data.cards[0].card.card);
                 setTop(data.data.data.cards[1].card.card);
                 setTitle(data.data.data.cards[2].card.card.title)
+                setfilterResult(foodList)
                 setfList(foodList);
 
             }
@@ -54,7 +55,7 @@ const Body = () => {
                 {fList == 0 ? <Shimmers /> : <div>
                     <Mind mind={mind} />
                     <Top top={top} />
-                    <AllRestro />
+                    <AllRestro filterResult={filterResult} fList={fList} search={search} title={title} />
                 </div>}
 
 

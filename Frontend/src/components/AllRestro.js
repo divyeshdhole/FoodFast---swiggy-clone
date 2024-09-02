@@ -1,41 +1,9 @@
 import { useState, useEffect } from 'react';
-import Shimmers from "./shimmers";
 import { Link } from 'react-router-dom';
 import ResCard from './ResCard';
-const AllRestro = () => {
-    const [fList, setfList] = useState([]);
-    const [search, setsearch] = useState([]);
-    const [filterResult, setfilterResult] = useState([]);
-    const [title, setTitle] = useState(null);
-
-    useEffect(() => {
-        const fetchData = () => {
-            return fetch("https://food-fast-restapi.vercel.app/api/restaurants")
-                .then(response => response.json())  // Correctly call the json method
-                .then(data => {
-                    // console.log(data);  // Log the parsed data
-                    return data;
-                })
-                .catch(error => {
-                    console.error('Error fetching data:', error);  // Handle any errors
-                });
-        }
-
-        fetchData().then(data => {
-            if (data) {
-                // console.log(data); //
-                const foodList = data.data.data.cards[1].card.card.gridElements.infoWithStyle.restaurants;
-                // console.log(foodList); //
+const AllRestro = ({ search, filterResult, title, fList }) => {
 
 
-                setTitle(data.data.data.cards[2].card.card.title)
-                setfList(foodList);
-                setfilterResult(foodList);
-                // console.log(fList);
-
-            }
-        });
-    }, []);
     return <div className="flex flex-col mt-6">
         {title && <h3 className="text-2xl font-bold mb-4">{title}</h3>}
         <div className="flex items-center">
@@ -71,18 +39,13 @@ const AllRestro = () => {
         </div>
         {console.log(filterResult)}
         <div className="flex flex-wrap">
-            {fList.length === 0 ? (
-                Array.from({ length: 10 }).map((_, index) => (
-                    <Shimmers key={index} />
-                ))
-            ) : (
 
-                filterResult.map((food, index) => (
-                    <Link key={index} to={"restaurants/" + food.info.id}>
-                        <ResCard food={food} />
-                    </Link>
-                ))
-            )}
+
+            {filterResult.map((food, index) => (
+                <Link key={index} to={"restaurants/" + food.info.id}>
+                    <ResCard food={food} />
+                </Link>))}
+
         </div>
     </div>
 }
