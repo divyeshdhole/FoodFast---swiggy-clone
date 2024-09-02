@@ -4,10 +4,8 @@ import react from '@vitejs/plugin-react';
 
 export default defineConfig({
     plugins: [react()],
-    build: {
-        outDir: 'build'  // Change this line
-    },
     server: {
-        port: 3000
+        port: 3000,  // Choose your preferred port
+        hot: true    // Enable HMR
     }
 });

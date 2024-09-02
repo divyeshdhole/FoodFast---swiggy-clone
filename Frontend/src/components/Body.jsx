@@ -55,7 +55,7 @@ const Body = () => {
                 {fList == 0 ? <Shimmers /> : <div>
                     <Mind mind={mind} />
                     <Top top={top} />
-                    <AllRestro filterResult={filterResult} fList={fList} search={search} title={title} setfilterResult={setfilterResult} />
+                    <AllRestro filterResult={filterResult} fList={fList} search={search} title={title} setfilterResult={setfilterResult} setsearch={setsearch} />
                 </div>}
 
 

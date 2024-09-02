@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import ResCard from './ResCard';
-const AllRestro = ({ search, filterResult, title, fList, setfilterResult }) => {
+const AllRestro = ({ search, setsearch, filterResult, title, fList, setfilterResult }) => {
 
 
     return <div className="flex flex-col mt-6">
@@ -11,11 +11,25 @@ const AllRestro = ({ search, filterResult, title, fList, setfilterResult }) => {
                 setsearch(e.target.value);
 
             }}></input>
-            <button className="p-2 shadow-sm border border-orange-400 bg-orange-400 hover:bg-orange-500 rounded-r-lg" onClick={() => {
-                const filterList = fList.filter((res) => res.info.name.toLowerCase().includes(search.toLowerCase()))
-                setfilterResult(filterList);
-                setsearch("");
-            }}>Search</button>
+            <button
+                className="p-2 shadow-sm border border-orange-400 bg-orange-400 hover:bg-orange-500 rounded-r-lg"
+                onClick={() => {
+                    if (search.trim() !== "") {
+                        // Filter the list based on search input
+                        const filterList = fList.filter((res) =>
+                            res.info.name.toLowerCase().includes(search.toLowerCase())
+                        );
+                        setfilterResult(filterList);
+                    } else {
+                        // If the search input is empty, you can choose to reset or show all items
+                        setfilterResult(fList);  // Reset to show all items if search is empty
+                    }
+                    setsearch("");  // Clear the search input after the search
+                }}
+            >
+                Search
+            </button>
+
 
             <button className="m-2 shadow-sm text-xs border font-semibold text-gray-900 h-8 px-2 border-gray-300 bg-white hover:bg-gray-200 rounded-full" onClick={() => {
 
