@@ -4,9 +4,9 @@
   "description": "\"This is swiggy clone\"",
   "main": "index.js",
   "scripts": {
-    "start": "vite",
+    "dev": "vite",
     "build": "vite build",
-    "serve": "vite preview"
+    "preview": "vite preview"
   },
   "author": "Divyesh Dhole",
   "license": "ISC",
