@@ -29,7 +29,7 @@ const ResMenu = () => {
                 // console.log(data);
             }
         });
-    }, []);
+    }, [resId]);
     if (menu === null) {
         return <Shimmers />
     }
