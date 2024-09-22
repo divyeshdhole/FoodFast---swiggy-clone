@@ -75,7 +75,7 @@ const Top = ({ top }) => {
             <div className="relative">
                 <div
                     ref={scrollContainerRef}
-                    className="flex overflow-x-hidden whitespace-nowrap px-4 py-2"
+                    className="flex overflow-x-scroll whitespace-nowrap px-4 py-2 scrollbar-hide"
                     onScroll={checkScrollButtons}
                 >
                     {topRes.map((food, index) => (

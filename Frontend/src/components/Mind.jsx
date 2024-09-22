@@ -48,7 +48,7 @@ const HorizontalScrollWithButtons = ({ mind }) => {
             {/* Scroll Buttons */}
             <div className='flex justify-between items-center'>
                 <h3 className='font-bold text-2xl'>{mind.header.title}</h3>
-                <div className='flex justify-end gap-2'>
+                <div className='flex justify-end gap-1'>
 
                     <button
                         onClick={scrollLeft}
@@ -71,10 +71,10 @@ const HorizontalScrollWithButtons = ({ mind }) => {
 
             <div
                 ref={scrollContainerRef}
-                className="overflow-x-hidden whitespace-nowrap px-4 py-2"
+                className="whitespace-nowrap px-4 py-2 overflow-x-scroll scrollbar-hide"
                 onScroll={checkScrollButtons} // Check button state on scroll
             >
-                <div className="flex flex-nowrap gap-4">
+                <div className="flex flex-nowrap gap-1">
                     {mind.imageGridCards.info.map((card, index) => (
                         <MindCard key={index} data={card} className="inline-block" />
                     ))}
