@@ -12,6 +12,9 @@ export default defineConfig({
             input: {
                 main: './index.html', // Specify the main entry point
             },
+            outDir: 'dist'
+
         },
     },
+
 });
