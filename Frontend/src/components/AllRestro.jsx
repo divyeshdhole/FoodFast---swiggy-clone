@@ -50,7 +50,6 @@ const AllRestro = ({ search, setsearch, filterResult, title, fList, setfilterRes
 
 
         </div>
-        {console.log(filterResult)}
         <div className="flex flex-wrap">
 
 
@@ -60,6 +59,8 @@ const AllRestro = ({ search, setsearch, filterResult, title, fList, setfilterRes
                 </Link>))}
 
         </div>
+        <div className='border border-b-0 bg-gray-50 mt-10'></div>
+
     </div>
 }
 export default AllRestro;

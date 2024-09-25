@@ -7,7 +7,7 @@ import About from './components/About';
 import Contact from './components/Contact';
 import Error from './components/Error';
 import ResMenu from "./components/ResMenu";
-
+import Footer from "./components/Footer";
 
 
 const AppLayout = () => {
@@ -15,6 +15,7 @@ const AppLayout = () => {
         <div className="App">
             <Header />
             <Outlet />
+            <Footer />
         </div>
     );
 };

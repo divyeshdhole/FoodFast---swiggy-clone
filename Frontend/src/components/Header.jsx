@@ -29,7 +29,7 @@ const Header = () => {
                 <Link className="px-2 m-3 flex items-center gap-1 hover:text-orange-400" to="#"><IoBagOutline />FoodFast Corporate</Link>
                 <Link className="px-2 m-3 flex items-center gap-1 hover:text-orange-400" to="/"><FaHome />Home</Link>
                 <Link className="px-2 m-3 flex items-center gap-1 hover:text-orange-400" to="#">< IoSearch />Search</Link>
-                <Link className="px-2 m-3 flex items-center gap-1 hover:text-orange-400" to="/about"><RiQuestionLine />about</Link>
+                <Link className="px-2 m-3 flex items-center gap-1 hover:text-orange-400" to="/about"><RiQuestionLine />About</Link>
                 <Link className="px-2 m-3 flex items-center gap-1 hover:text-orange-400" to="#"><RiCustomerService2Fill />Services</Link>
                 <Link className="px-2 m-3 flex items-center gap-1 hover:text-orange-400" to="/contact"><IoIosContact />Contact</Link>
                 <button className="px-2 m-3 flex items-center gap-1 hover:text-orange-400" onClick={() => {

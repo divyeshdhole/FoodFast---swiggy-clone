@@ -6,7 +6,7 @@ import useOnlineStatus from "../utils/useOnlineStatus";
 import Mind from "./Mind";
 import Top from "./Top";
 import AllRestro from "./AllRestro";
-
+import Best from "./Best";
 const Body = () => {
     const [fList, setfList] = useState([]);
     const [search, setsearch] = useState([]);
@@ -14,6 +14,8 @@ const Body = () => {
     const [mind, setMind] = useState(null);
     const [top, setTop] = useState([]);
     const [title, setTitle] = useState(null);
+    const [bestPlaces, setBestPlaces] = useState(0);
+    const [bestCuisines, setBestCuisines] = useState(0);
     useEffect(() => {
         const fetchData = () => {
             return fetch("https://food-fast-restapi.vercel.app/api/restaurants")
@@ -37,11 +39,12 @@ const Body = () => {
                 setTitle(data.data.data.cards[2].card.card.title)
                 setfilterResult(foodList)
                 setfList(foodList);
+                setBestPlaces(data.data.data.cards[6].card.card);
+                setBestCuisines(data.data.data.cards[7].card.card);
 
             }
         });
     }, []);
-    { console.log(title) }
 
 
     const isOnline = useOnlineStatus();
@@ -56,6 +59,8 @@ const Body = () => {
                     <Mind mind={mind} />
                     <Top top={top} />
                     <AllRestro filterResult={filterResult} fList={fList} search={search} title={title} setfilterResult={setfilterResult} setsearch={setsearch} />
+                    <Best best={bestPlaces} />
+                    <Best best={bestCuisines} />
                 </div>}
 
 
