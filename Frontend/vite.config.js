@@ -5,12 +5,12 @@ import react from '@vitejs/plugin-react';
 export default defineConfig({
     plugins: [react()],
     server: {
-        historyApiFallback: true, // Add this to handle SPA routing
+        historyApiFallback: true, // Handles SPA routing for client-side navigation
     },
     build: {
         rollupOptions: {
             input: {
-                main: './index.html',
+                main: './index.html', // Specify the main entry point
             },
         },
     },
